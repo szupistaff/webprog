@@ -8,11 +8,18 @@ window.addEventListener('load', (e) => {
 
     for (let ci=0; ci<size*size; ci++) {
         let cell = document.createElement('div');
-        cell.className = 'cell';
+        cell.classList.add('cell');
+        let sor = ci / size;
+        let oszlop = ci % 2;
+        if (ci % 2 == 0) {
+            cell.classList.add('black');
+        }
         cell.style.width = cellSize + 'px';
         cell.style.height = cellSize + 'px';
         grid.appendChild(cell);
+
     }
+
 
     document.body.appendChild(grid);
 });
